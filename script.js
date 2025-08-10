@@ -80,5 +80,4 @@ function startVoice() {
   } catch (error) {
     console.error("🎙️ Error al iniciar reconocimiento de voz:", error);
   }
-}
 
