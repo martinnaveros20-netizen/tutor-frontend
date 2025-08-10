@@ -1,5 +1,5 @@
 // ====== CONFIGURACIÓN ======
-const BACKEND_URL = "https://tutor-backend-7ldm.onrender.com"; // Cambia esta URL por la de tu backend
+const BACKEND_URL =  "https://tutor-backend-7ldm.onrender.com/chat";// Cambia esta URL por la de tu backend
 
 // ====== ELEMENTOS DEL DOM ======
 const chatDiv = document.getElementById("chat");
