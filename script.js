@@ -2,7 +2,7 @@ const chatDiv = document.getElementById("chat");
 const input = document.getElementById("input");
 const sendBtn = document.getElementById("sendBtn");
 
-const BACKEND_URL = "https://tutor-backend-7ldm.onrender.com/chat";
+const BACKEND_URL = "https://idiomame.vercel.app//chat";
 
 // Eventos
 sendBtn.addEventListener("click", sendMessage);
