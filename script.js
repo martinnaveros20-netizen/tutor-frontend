@@ -54,3 +54,5 @@ function startVoice() {
   };
   recognition.start();
 }
+npm install cors
+
