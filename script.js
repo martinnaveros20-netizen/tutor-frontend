@@ -54,13 +54,5 @@ function startVoice() {
   };
   recognition.start();
 }
-npm install cors
-import cors from "cors";
-
-const app = express();
-
-app.use(cors({
-  origin: "https://idiomame.vercel.app"
-}));
 
 
