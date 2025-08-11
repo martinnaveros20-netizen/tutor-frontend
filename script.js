@@ -1,21 +1,34 @@
 const chatDiv = document.getElementById("chat");
 const input = document.getElementById("input");
+const sendBtn = document.getElementById("sendBtn");
+
+const BACKEND_URL = "https://tutor-backend-7ldm.onrender.com/chat";
+
+// Eventos
+sendBtn.addEventListener("click", sendMessage);
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
 
 async function sendMessage() {
-  const message = input.value;
+  const message = input.value.trim();
   if (!message) return;
   addMessage(message, "user");
   input.value = "";
 
-  const res = await fetch("https://idiomame.vercel.app/chat", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message })
-  });
+  try {
+    const res = await fetch(BACKEND_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
 
-  const data = await res.json();
-  addMessage(data.reply, "bot");
-  speak(data.reply);
+    const data = await res.json();
+    addMessage(data.reply, "bot");
+    speak(data.reply);
+  } catch (error) {
+    addMessage("Error: no pude conectarme con el servidor.", "bot");
+  }
 }
 
 function addMessage(text, sender) {
@@ -41,5 +54,3 @@ function startVoice() {
   };
   recognition.start();
 }
-  }
-
